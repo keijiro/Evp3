@@ -154,7 +154,7 @@ MonoBehaviour:
   _gain: 6
   _dynamicRange: 8
   _holdAndFallDown: 1
-  _fallDownSpeed: 0.3
+  _fallDownSpeed: 0.4
   _normalizedLevelEvent:
     m_PersistentCalls:
       m_Calls:
@@ -293,6 +293,7 @@ VFXRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 0}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -602,7 +603,7 @@ GameObject:
   - component: {fileID: 1170638913}
   - component: {fileID: 1170638914}
   m_Layer: 0
-  m_Name: Throttle
+  m_Name: Base Opacity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -634,8 +635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c5004b23fa4748e8fcf7b0cbe41050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 355840810}
-  _parameterName: Throttle
 --- !u!1 &1321102763
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,7 +646,7 @@ GameObject:
   - component: {fileID: 1321102764}
   - component: {fileID: 1321102765}
   m_Layer: 0
-  m_Name: Input Level
+  m_Name: Particle Throttle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -679,8 +678,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23c5004b23fa4748e8fcf7b0cbe41050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 355840810}
-  _parameterName: Input Level
+--- !u!1 &1387329590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1387329591}
+  m_Layer: 0
+  m_Name: Camera Pivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1387329591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387329590}
+  m_LocalRotation: {x: 0.038970705, y: -0.1378564, z: 0.0054284343, w: 0.9896704}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2131932671}
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 4.51, y: -15.86, z: 0}
 --- !u!1001 &1541500910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1057,12 +1085,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131932668}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1387329591}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2131932672
 MonoBehaviour:

@@ -6,14 +6,16 @@ namespace Evp3
     sealed class VfxParameterBridge : MonoBehaviour
     {
         public float parameterValue {
-            set { _target.SetFloat(gameObject.name, value); }
+            set { if (_target.enabled) _target.SetFloat(_id, value); }
         }
 
         VisualEffect _target;
+        int _id;
 
         void Start()
         {
             _target = transform.parent.GetComponent<VisualEffect>();
+            _id = Shader.PropertyToID(gameObject.name);
         }
     }
 }

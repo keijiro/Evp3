@@ -9,6 +9,7 @@ namespace Evp3
 
         [System.Serializable] class OutputEvent : UnityEvent<float> {}
 
+        [SerializeField] bool _mute = false;
         [SerializeField] AnimationCurve _envelope = null;
         [SerializeField] KeyCode _triggerKey = KeyCode.Z;
         [Space, SerializeField] OutputEvent _target = null;
@@ -22,7 +23,7 @@ namespace Evp3
             InvokeEvent();
         }}
 
-        public bool mute { get; set; }
+        public bool mute { set { _mute = value; } }
 
         public void Trigger()
         {
@@ -39,7 +40,7 @@ namespace Evp3
         void InvokeEvent()
         {
             var env = _envelope.Evaluate(_envelopeTime);
-            _target.Invoke(mute ? 0 : Mathf.Max(_externalValue, env));
+            _target.Invoke(Mathf.Max(_mute ? 0 : _externalValue, env));
         }
 
         #endregion

@@ -234,6 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b7f00d1f169bc5aafe4245b66d2561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mute: 1
   _envelope:
     serializedVersion: 2
     m_Curve:
@@ -1778,7 +1779,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1889786240}
-  _isOn: 0
+  _isOn: 1
   _graphic: {fileID: 1870626537}
   _onValueChanged:
     m_PersistentCalls:

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Evp3
 {
-    sealed class ScreenActivator : MonoBehaviour
+    sealed class DisplayActivator : MonoBehaviour
     {
         void Start()
         {

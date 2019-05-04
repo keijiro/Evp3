@@ -4,6 +4,7 @@ using UnityEngine.Experimental.Rendering.HDPipeline;
 
 namespace Evp3
 {
+    [ExecuteInEditMode]
     sealed class SimpleBlit : MonoBehaviour
     {
         [SerializeField] RenderTexture _source = null;

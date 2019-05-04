@@ -6,7 +6,7 @@ namespace Evp3
 {
     sealed class SimpleBlit : MonoBehaviour
     {
-        [SerializeField] RenderTexture _source;
+        [SerializeField] RenderTexture _source = null;
 
         void Start()
         {
@@ -16,6 +16,9 @@ namespace Evp3
         void CustomRender(ScriptableRenderContext context, HDCamera camera)
         {
             var cmd = CommandBufferPool.Get("");
+
+            cmd.SetViewport(new Rect(0, 0, _source.width, _source.height));
+            CoreUtils.ClearRenderTarget(cmd, ClearFlag.All, Color.clear);
 
             HDUtils.BlitQuad(
                 cmd, _source,

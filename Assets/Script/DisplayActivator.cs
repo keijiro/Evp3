@@ -4,19 +4,25 @@ namespace Evp3
 {
     sealed class DisplayActivator : MonoBehaviour
     {
-        void Start()
-        {
-            if (!Application.isEditor)
-            {
-                TryActivateDisplay(0);
-                TryActivateDisplay(1);
+        bool shouldActivateSecondDisplay {
+            get {
+                // The second display is not available on Editor.
+                if (Application.isEditor) return false;
+
+                // Check if the second display actually exists.
+                if (Display.displays.Length < 1) return false;
+
+                // Check if the "-dualscreen" option was given.
+                foreach (var arg in System.Environment.GetCommandLineArgs())
+                    if (arg == "-dualscreen") return true;
+
+                return false;
             }
         }
 
-        void TryActivateDisplay(int index)
+        void Start()
         {
-            if (index < Display.displays.Length)
-                Display.displays[index].Activate();
+            if (shouldActivateSecondDisplay) Display.displays[1].Activate();
         }
     }
 }

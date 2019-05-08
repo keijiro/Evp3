@@ -18,7 +18,7 @@ namespace Evp3
         {
             var cmd = CommandBufferPool.Get("");
 
-            cmd.SetViewport(new Rect(0, 0, _source.width, _source.height));
+            cmd.SetViewport(new Rect(0, 0, Screen.width, Screen.height));
             CoreUtils.ClearRenderTarget(cmd, ClearFlag.All, Color.clear);
 
             HDUtils.BlitQuad(
